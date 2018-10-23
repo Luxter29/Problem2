@@ -1,0 +1,36 @@
+package com.company;
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str;
+        byte rn = (byte)Math.floor(Math.random()*(0-100)+100);
+        byte limit = 5;
+        System.out.println(rn);
+        while(limit-->0){
+            byte reference = sc.nextByte();
+            if(reference == rn && limit == 4){
+                System.out.println("Are you a wizard?");
+                break;
+            }else if(reference == rn){
+                System.out.println("You guessed the number in " + limit + " tries");
+                break;
+            }else if(reference<rn){
+                System.out.println("The number is higher");
+            }else if(reference>rn){
+                System.out.println("The number is lower");
+            }else if(limit==0){
+                System.out.println("GAME OVER");
+                break;
+            }
+        }
+        System.out.println( "To play again, write YES, if not, write NO.");
+        str = sc.nextLine();
+        if(str == "YES"){
+            limit = 5;
+        }else if(str == "NO"){
+            System.out.println("IMBECIL MCFLURRY");
+        }
+    }
+}
